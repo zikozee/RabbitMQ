@@ -19,7 +19,7 @@ public class RabbitmqScheduler {
 
     private final RabbitListenerEndpointRegistry registry;
 
-    @Scheduled(cron = "0 47 3 * * *") //  stop all listeners at 11 pm
+    @Scheduled(cron = "0 0 23 * * *") //  stop all listeners at 11 pm
     public void stopAllListeners(){
         registry.getListenerContainers().forEach(c -> {
             log.info("Stopping listener container {}", c);
@@ -27,7 +27,7 @@ public class RabbitmqScheduler {
         });
     }
 
-    @Scheduled(cron = "0 49 3 * * *")   //  starts all listeners at 00:00:01am
+    @Scheduled(cron = "1 0 0 * * *")   //  starts all listeners at 00:00:01am
     public void startAllListeners(){
         registry.getListenerContainers().forEach(c -> {
             log.info("Stopping listener container {}", c);

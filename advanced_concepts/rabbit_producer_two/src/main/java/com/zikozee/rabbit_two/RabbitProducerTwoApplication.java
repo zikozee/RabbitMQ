@@ -7,7 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import java.time.LocalDate;
+import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 @RequiredArgsConstructor
@@ -21,7 +23,11 @@ public class RabbitProducerTwoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        var dummyMessage = new DummyMessage("Now is " + LocalDate.now(), 1);
-        producer.sendDummy(dummyMessage);
+        for (var i = 0; i < 10_0000; i++) {
+            var dummyMessage = new DummyMessage("Now is " + LocalDate.now(), 1);
+            producer.sendDummy(dummyMessage);
+            TimeUnit.SECONDS.sleep(1);
+        }
+
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Slf4j
-//@Service
+@Service
 public class DummyConsumer {
     public static final String QUEUE ="q.dummy";
 

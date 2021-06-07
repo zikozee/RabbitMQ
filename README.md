@@ -232,3 +232,12 @@ producer -->>SpringEmployeeProducer
 consumer	--> SpringEmployeeConsumer
 config application.yml >>>retries managed by spring
 
+					
+					
+					## HALTING LISTENER FOR A PERIOD OF TIME
+to halt listeners for a period of time in order to complete some actions
+Example: halt processing of payment for aspecific time  (using cron job)
+
+classes used -> 
+producer ::DummyProducer and commandline runner
+consumer ::RabbitmqScheduler

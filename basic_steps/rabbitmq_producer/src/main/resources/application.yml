@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+    username: guest
+    password: guest
+
+
+## to connect to cloud rabbit mq
+#spring:
+#  rabbitmq:
+#    addresses: beaver.rmq.cloudamqp.com
+#    username: uxmxgntv
+#    password: B3JpS3pRKbKUcXkV8-ZmzD9XN0i_OKJk
+#    virtual-host: uxmxgntv

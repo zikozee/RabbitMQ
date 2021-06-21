@@ -230,13 +230,13 @@ SPRING RETRY FOR FANOUT EXCHANGE
 ============
 producer -->>SpringEmployeeProducer
 consumer	--> SpringEmployeeConsumer
-config application.yml >>>retries managed by spring
+config application.yml >>> retries managed by spring
 
 					
 					
-					## HALTING LISTENER FOR A PERIOD OF TIME
+					## HALTING LISTENER FOR A PERIOD OF TIME (SCHEDULING CONSUMER)
 to halt listeners for a period of time in order to complete some actions
-Example: halt processing of payment for aspecific time  (using cron job)
+Example: halt processing of payment for aspecific time  (using cron job) say 11pm to 12 am
 
 classes used -> 
 producer ::DummyProducer and commandline runner

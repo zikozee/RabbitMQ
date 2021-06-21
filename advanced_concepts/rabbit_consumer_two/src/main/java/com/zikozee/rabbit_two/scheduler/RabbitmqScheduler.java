@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
  * @created : 07 Jun, 2021
  */
 @Slf4j
-@Service
-@EnableScheduling
+//@Service
+//@EnableScheduling
 @RequiredArgsConstructor
 public class RabbitmqScheduler {
 

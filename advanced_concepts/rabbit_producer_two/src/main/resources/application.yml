@@ -1,2 +1,8 @@
 server:
   port: 8081
+
+spring:
+  rabbitmq:
+    addresses: localhost
+    username: guest
+    password: guest

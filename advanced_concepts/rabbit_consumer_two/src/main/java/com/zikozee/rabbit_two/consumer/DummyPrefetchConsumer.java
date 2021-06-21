@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author : zikoz
  * @created : 07 Jun, 2021
@@ -12,14 +14,12 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 //@Service
-public class DummyConsumer {
+public class DummyPrefetchConsumer {
     public static final String QUEUE ="q.dummy";
 
-    @RabbitListener(queues = QUEUE)
-    public void listenDummy(DummyMessage message){
-        // todo info: no need to convert to Object, Jackson2JsonMessageConverter will handle it
-        // todo info: however, ensure package name is same
+    @RabbitListener(queues = QUEUE, concurrency = "2")
+    public void listenDummy(DummyMessage message) throws InterruptedException {
         log.info("Message is {}", message);
-
+        TimeUnit.SECONDS.sleep(20);
     }
 }

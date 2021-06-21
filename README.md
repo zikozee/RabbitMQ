@@ -2,6 +2,10 @@
 
 docker run -d --name rabbitmq --hostname docker-rabbitmq -p 5672:5672 -p 15672:15672 -v c:/tmp/rabbitmq/data:/var/lib/rabbitmq/mnesia rabbitmq:management
 
+docker exec -it rabbitmq bash
+root@docker-rabbitmq:/# rabbitmq-plugins list    >>>>>>>>> list plugins
+rabbitmq-plugins enbable rabbitmq_consistent_hash_exchange      >>>>> enabling plu
+
 a consumer is essentially a subscriber --->>> SEE RABBITMQ FOLDER FOR FANOUT DIAGRAM
 				===============
 				FANOUT EXCHANGE		SEE RABBITMQ FOLDER FOR FANOUT DIAGRAM
